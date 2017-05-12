@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.sergeant_matatov.watchsitter.SysManagerActivity">
+
+
+    <item
+        android:id="@+id/action_instructions"
+        android:orderInCategory="100"
+        android:title="@string/actionBtnInstructions"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_of_programm"
+        android:orderInCategory="100"
+        android:title="@string/actionBtnOfProgramm"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_from_developer"
+        android:orderInCategory="100"
+        android:title="@string/actionBtnFromDeveloper"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_advise_friend"
+        android:orderInCategory="100"
+        android:title="@string/actionBtnAdviseFriend"
+        app:showAsAction="never" />
+
+</menu>

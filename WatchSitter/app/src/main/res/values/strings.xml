@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">Watch Sitter</string>
+    <string name="lable_alarm">Alarm</string>
+    <string name="lable_contacts">Contacts</string>
+
+
+    <!--buttons action bar -->
+    <string name="actionBtnInstructions">Instructions</string>
+    <string name="actionBtnOfProgramm">About the program</string>
+    <string name="actionBtnFromDeveloper">More from Developer</string>
+    <string name="actionBtnAdviseFriend">Suggest to friends</string>
+
+    <!-- Application-->
+    <color name="holo_blue_light">#ff33b5e5</color>
+    <color name="title_background_color">#000000</color>
+
+    <!-- week days -->
+    <string name="daySunday">Sunday</string>
+    <string name="dayMonday">Monday</string>
+    <string name="dayTuesday">Tuesday</string>
+    <string name="dayWednesday">Wednesday</string>
+    <string name="dayThursday">Thursday</string>
+    <string name="dayFriday">Friday</string>
+    <string name="daySaturday">Saturday</string>
+
+
+    <!-- pref alarm list-->
+    <string name="setTimeAlarm">Set time</string>
+    <string name="setRepeat">Repeat</string>
+    <string name="setDifficulty">Difficulty</string>
+    <string name="setRingtone">Ringtone</string>
+    <string name="strEveryDay">Every Day</string>
+    <string name="strVersion">Version 1.6</string>
+
+
+    <!-- all dialogs-->
+    <string name="dialogTitleDel">Delete</string>
+    <string name="dialogMsgDelAlarm">Delete this alarm?</string>
+    <string name="dialogMsgDelPers">Are you sure you want to delete the contact from the list of recipients?</string>
+    <string name="dialogMsgStartInstructions">To start the program you must set the alarm clock and select the contact (contacts) to receive the message.</string>
+    <string name="dialogMsgInstructions">After you select a contact, and set the alarm clock will begin its work program, provided that the phone is switched on. Alarms are triggered on time. Otlyuchit Service must be within 5 minutes. If the alarm does not turn off, then after 5 minutes, the program will send a message to selected contacts. Enjoy your use!</string>
+    <string name="dialogCheckPermissionSMS">The program uses the function of sending sms-messages. This should be the case when the Service will work, and you for any reason during the 5 minutes turn off the alarm, the program will automatically send out an alarm signal in the form of sms-messages to contacts that you have selected. For sending sms-messages may apply. Details can be obtained from your mobile operator. Without your permission, it makes no sense to continue using the program.</string>
+    <string name="dialogCheckPermissionContact">The program uses the phone book data, so that you would select a contact as a recipient, who will receive an alarm signal in the form of sms-messages. Phonebook data are only available to you and will not be transmitted. Without your permission, it makes no sense to continue using the program.</string>
+
+    <!-- Buttons -->
+    <string name="btnOK">OK</string>
+    <string name="btnYes">Yes</string>
+    <string name="btnNo">No</string>
+    <string name="btnCancel">Cancel</string>
+    <string name="btnStopAlarm">Stop\nAlarm</string>
+    <string name="btnFeedback">feedback</string>
+    <string name="btnPrivacyPolicy"><u>Privacy Policy</u></string>
+
+
+    <!-- Texts -->
+    <string name="textAlarms">Alarms:</string>
+    <string name="textPersons">Contacts that will receive messages:</string>
+    <string name="textTimer">Alarm Clock turn off after:</string>
+    <string name="textSendSMS">The alarm on the watch sitter program has not been disabled. Urgent call back!</string>
+
+    <string name="textTitlePrivacyPolicy">Privacy Policy\nWatch Sitter</string>
+    <string name="textPrivacyPolicy"><b><u>The purpose of the program</u></b> - to ensure control and rapid assistance to those who are lonely or sick, or in need of support.\n\n\n<b><u>Use of the program.</u></b>\nThe program needs to set an alarm or an alarm clock as this is necessary and convenient to the user. When the alarm or alarms necessarily have to choose a phone number or multiple phone numbers that will receive an alarm signal in the form of sms messages. At a time when triggered alarm, the user within 5 minutes should turn it off. If for any reason the user can not turn off the alarm clock, the program automatically notifies the contacts selected by the user that the Service has not been disabled.\n\n\n<b><u>Using the phone book data and sending sms-messages</u></b>\n1. The program uses the phone book data, so that the user had selected the software he needed contact as a recipient, who will receive an alarm signal in the form of sms-messages (paragraph 2). Phonebook data is only available to the user program and never passed;\n\n2. The program uses the function of sending sms-messages. This should be the case when triggered alarm, and the user for any reason during the 5 minutes turn off the alarm, the program will automatically send out an alarm signal in the form of sms-messages to contacts that the user selects (paragraph 1). For sending sms-messages may apply. Details can be obtained from your mobile operator.</string>
+
+    <string name="nameDeveloper">Matatov Yury\nMatatov1989@gmail.com</string>
+    <string name="nameDesigner">Matatov Nikita\nDocmat63@gmail.com</string>
+
+
+</resources>
