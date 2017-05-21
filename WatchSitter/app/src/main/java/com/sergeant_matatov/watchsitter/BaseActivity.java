@@ -2,7 +2,7 @@ package com.sergeant_matatov.watchsitter;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,7 +15,7 @@ import java.lang.reflect.Field;
 /**
  * Created by Yurka on 29.08.2016.
  */
-public class BaseActivity extends ActionBarActivity implements android.view.View.OnClickListener{
+public class BaseActivity extends AppCompatActivity implements android.view.View.OnClickListener{
 
     final String LOG_TAG = "myLogs";
     @Override

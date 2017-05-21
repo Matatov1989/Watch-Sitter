@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Watch Sitter</string>
+    <string name="app_name">Часы Сиделка</string>
     <string name="lable_alarm">Будильник</string>
     <string name="lable_contacts">Контакты</string>
 
@@ -32,7 +32,7 @@
     <string name="setDifficulty">трудность</string>
     <string name="setRingtone">Мелодия</string>
     <string name="strEveryDay">Каждый день</string>
-    <string name="strVersion">Версия 1.6</string>
+    <string name="strVersion">Версия 1.7</string>
 
 
     <!-- all dialogs-->

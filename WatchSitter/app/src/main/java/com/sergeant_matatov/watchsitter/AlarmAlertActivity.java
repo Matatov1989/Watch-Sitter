@@ -60,8 +60,11 @@ public class AlarmAlertActivity extends Activity {
 
         Log.d(LOG_TAG, "creat AlarmAlertActivity");
 
-        Bundle bundle = this.getIntent().getExtras();
-        alarm = (Alarm) bundle.getSerializable("alarm");
+   //     Bundle bundle = this.getIntent().getExtras();
+   //     alarm = (Alarm) bundle.getSerializable("alarm");
+
+        alarm = new Alarm();
+
 
   //      this.setTitle(alarm.getAlarmName());
 /*
