@@ -113,6 +113,7 @@ public class BaseActivity extends AppCompatActivity implements android.view.View
     protected void callMathAlarmScheduleService() {
         Intent mathAlarmServiceIntent = new Intent(this, AlarmServiceBroadcastReciever.class);
         sendBroadcast(mathAlarmServiceIntent, null);
+
     }
 
     @Override

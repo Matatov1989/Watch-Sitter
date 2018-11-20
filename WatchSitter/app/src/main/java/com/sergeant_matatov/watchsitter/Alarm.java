@@ -407,8 +407,9 @@ public class Alarm extends BaseActivity implements Serializable {
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, myIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-
         alarmManager.set(AlarmManager.RTC_WAKEUP, getAlarmTime().getTimeInMillis(), pendingIntent);
+
+    //    alarmManager.set()
     }
 
     public String getTimeUntilNextAlarmMessage() {
