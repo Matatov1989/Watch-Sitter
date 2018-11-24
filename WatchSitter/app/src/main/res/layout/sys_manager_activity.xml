@@ -9,7 +9,6 @@
 
     <include layout="@layout/content_sys_manager" />
 
-
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/addAlarm"
         android:layout_width="wrap_content"

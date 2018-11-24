@@ -10,5 +10,11 @@
     <color name="colorBlack">#000000</color>
     <color name="colorGold">#eff70e</color>
     <color name="colorGoldDark">#d9e102</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorGreen">#76c75d</color>
+    <color name="colorGreenDark">#467a36</color>
+
+    <color name="holo_blue_light">#ff33b5e5</color>
+    <color name="title_background_color">#000000</color>
 
 </resources>

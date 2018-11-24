@@ -10,10 +10,6 @@
     <string name="actionBtnFromDeveloper">More from Developer</string>
     <string name="actionBtnAdviseFriend">Suggest to friends</string>
 
-    <!-- Application-->
-    <color name="holo_blue_light">#ff33b5e5</color>
-    <color name="title_background_color">#000000</color>
-
     <!-- week days -->
     <string name="daySunday">Sunday</string>
     <string name="dayMonday">Monday</string>
@@ -57,10 +53,10 @@
     <string name="textPersons">Contacts that will receive messages:</string>
     <string name="textTimer">Alarm Clock turn off after:</string>
     <string name="textSendSMS">The alarm on the watch sitter program has not been disabled. Urgent call back!</string>
-
+<!--
     <string name="textTitlePrivacyPolicy">Privacy Policy\nWatch Sitter</string>
     <string name="textPrivacyPolicy"><b><u>The purpose of the program</u></b> - to ensure control and rapid assistance to those who are lonely or sick, or in need of support.\n\n\n<b><u>Use of the program.</u></b>\nThe program needs to set an alarm or an alarm clock as this is necessary and convenient to the user. When the alarm or alarms necessarily have to choose a phone number or multiple phone numbers that will receive an alarm signal in the form of sms messages. At a time when triggered alarm, the user within 5 minutes should turn it off. If for any reason the user can not turn off the alarm clock, the program automatically notifies the contacts selected by the user that the Service has not been disabled.\n\n\n<b><u>Using the phone book data and sending sms-messages</u></b>\n1. The program uses the phone book data, so that the user had selected the software he needed contact as a recipient, who will receive an alarm signal in the form of sms-messages (paragraph 2). Phonebook data is only available to the user program and never passed;\n\n2. The program uses the function of sending sms-messages. This should be the case when triggered alarm, and the user for any reason during the 5 minutes turn off the alarm, the program will automatically send out an alarm signal in the form of sms-messages to contacts that the user selects (paragraph 1). For sending sms-messages may apply. Details can be obtained from your mobile operator.</string>
-
+-->
     <string name="nameDeveloper">Matatov Yury\nMatatov1989@gmail.com</string>
     <string name="nameDesigner">Matatov Nikita\nDocmat63@gmail.com</string>
 

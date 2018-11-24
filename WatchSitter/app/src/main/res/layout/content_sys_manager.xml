@@ -12,7 +12,6 @@
     tools:context="com.sergeant_matatov.watchsitter.SysManagerActivity"
     tools:showIn="@layout/sys_manager_activity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

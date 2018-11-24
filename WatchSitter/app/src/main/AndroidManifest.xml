@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- разрешение для телефонной книги -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -74,7 +75,10 @@
             android:name=".AboutProgram"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".PrivacyPolicy"></activity>
+
+        <activity
+            android:name=".PrivacyPolicy"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
