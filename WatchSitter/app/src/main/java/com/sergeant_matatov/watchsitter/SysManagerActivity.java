@@ -348,19 +348,17 @@ public class SysManagerActivity extends BaseActivity {
 
             case R.id.action_from_developer:
                 Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("https://play.google.com/store/apps/developer?id=Yurka+Sergeant+Matatov"));
+                intent.setData(Uri.parse("https://play.google.com/store/apps/developer?id=Yury%20Matatov&hl"));
                 startActivity(intent);
                 break;
 
             case R.id.action_advise_friend:
-                //посоветовать другу
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
                 sendIntent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.sergeant_matatov.watchsitter&hl");
                 sendIntent.setType("text/plain");
                 startActivity(sendIntent);
                 break;
-
         }
         return super.onOptionsItemSelected(item);
     }
