@@ -26,7 +26,7 @@
     <string name="setDifficulty">Difficulty</string>
     <string name="setRingtone">Ringtone</string>
     <string name="strEveryDay">Every Day</string>
-    <string name="strVersion">Version 2.1</string>
+    <string name="strVersion">Version 2.2</string>
 
 
     <!-- all dialogs-->
@@ -35,7 +35,7 @@
     <string name="dialogMsgDelPers">Are you sure you want to delete the contact from the list of recipients?</string>
     <string name="dialogMsgStartInstructions">To start the program you must set the alarm clock and select the contact (contacts) to receive the message.</string>
     <string name="dialogMsgInstructions">After you select a contact, and set the alarm clock will begin its work program, provided that the phone is switched on. Alarms are triggered on time. Otlyuchit Service must be within 5 minutes. If the alarm does not turn off, then after 5 minutes, the program will send a message to selected contacts. Enjoy your use!</string>
-    <string name="dialogCheckPermissionSMS">The program uses the function of sending sms-messages. This should be the case when the Service will work, and you for any reason during the 5 minutes turn off the alarm, the program will automatically send out an alarm signal in the form of sms-messages to contacts that you have selected. For sending sms-messages may apply. Details can be obtained from your mobile operator. Without your permission, it makes no sense to continue using the program.</string>
+    <string name="dialogCheckPermissionSMS">The program uses the function of sending messages. This should be the case when the Service will work, and you for any reason during the 5 minutes do not turn off the alarm, the program will automatically send out an alarm signal in the form of messages to contacts that you have selected. For sending messages may apply. Details can be obtained from your mobile operator. Without your permission, it makes no sense to continue using the program.</string>
     <string name="dialogCheckPermissionContact">The program uses the phone book data, so that you would select a contact as a recipient, who will receive an alarm signal in the form of sms-messages. Phonebook data are only available to you and will not be transmitted. Without your permission, it makes no sense to continue using the program.</string>
 
     <!-- Buttons -->

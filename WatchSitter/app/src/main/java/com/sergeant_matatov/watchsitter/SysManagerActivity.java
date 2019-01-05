@@ -40,17 +40,12 @@ public class SysManagerActivity extends BaseActivity {
     //   private ArrayList<String> alarmArrayList = new ArrayList<String>();
     private ArrayList<String> personArrayList = new ArrayList<String>();
 
+    public static final int CODE_SEND_SMS = 1;
+
 /*    int myHour;
     int myMinute;
     int cnt = 0;
  */
-
-    public static final int MULTIPLE_PERMISSIONS = 2; // code you want.
-
-    String[] permissions = new String[]{
-            Manifest.permission.READ_CONTACTS,
-            Manifest.permission.SEND_SMS,
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +53,6 @@ public class SysManagerActivity extends BaseActivity {
         setContentView(R.layout.sys_manager_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        checkPermissions();
 
         //если удерживать на выбранной позиции для удаления
         listAlarmView = (ListView) findViewById(android.R.id.list);
@@ -130,10 +123,9 @@ public class SysManagerActivity extends BaseActivity {
         addAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent newAlarmIntent = new Intent(SysManagerActivity.this, AlarmPreferencesActivity.class);
-                startActivity(newAlarmIntent);
 
-                //       Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                checkPermissionSendSMS();
+
             }
         });
 
@@ -364,86 +356,48 @@ public class SysManagerActivity extends BaseActivity {
     }
 
 
-    public boolean checkPermissions() {
-        int result;
-        List<String> listPermissionsNeeded = new ArrayList<>();
-        for (String p : permissions) {
-            result = ContextCompat.checkSelfPermission(this, p);
-            if (result != PackageManager.PERMISSION_GRANTED) {
-                listPermissionsNeeded.add(p);
+    //check permission on send sms
+    private void checkPermissionSendSMS() {
+        Log.d(LOG_TAG, "checkPermissionSendSMS");
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, android.Manifest.permission.SEND_SMS)) {
+                dialogPermissionSendSMS();
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.SEND_SMS}, CODE_SEND_SMS);
             }
+        } else {
+            startActivity(new Intent(SysManagerActivity.this, AlarmPreferencesActivity.class));
+       //     saveAlarm();
         }
-        if (!listPermissionsNeeded.isEmpty()) {
-            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), MULTIPLE_PERMISSIONS);
-            return false;
-        }
-        return true;
+    }
+
+    //dialog if user do not set permission on send sms
+    private void dialogPermissionSendSMS() {
+        Log.d(LOG_TAG, "dialogPermissionSendSMS");
+        android.app.AlertDialog.Builder adb = new android.app.AlertDialog.Builder(this);
+        adb.setCancelable(false);
+        adb.setMessage(R.string.dialogCheckPermissionSMS);
+        adb.setPositiveButton(R.string.btnOK, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                ActivityCompat.requestPermissions(SysManagerActivity.this, new String[]{android.Manifest.permission.SEND_SMS}, CODE_SEND_SMS);
+                dialog.dismiss();
+            }
+        });
+        adb.show();
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        Log.d(LOG_TAG, "requestCode  " + requestCode);
         switch (requestCode) {
-
-            case MULTIPLE_PERMISSIONS: {
+            case CODE_SEND_SMS: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // permissions granted.
-                    //              FLAGPERMISSION = true;
-                    Log.d(LOG_TAG, "permission if " + MULTIPLE_PERMISSIONS);
+             //       saveAlarm();
+                    startActivity(new Intent(SysManagerActivity.this, AlarmPreferencesActivity.class));
                 } else {
-                    //no permissions granted.
-                    //FLAGPERMISSION = false;
-                    Log.d(LOG_TAG, "permission else " + MULTIPLE_PERMISSIONS);
-
-                    if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_CONTACTS)) {
-                        showDialogOK(getString(R.string.dialogCheckPermissionContact), new DialogInterface.OnClickListener()
-                        {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which)
-                            {
-                                switch (which)
-                                {
-                                    case DialogInterface.BUTTON_POSITIVE:
-                                        checkPermissions();
-                                        break;
-                                    case DialogInterface.BUTTON_NEGATIVE:
-                                        // proceed with logic by disabling the related features or quit the app.
-                                        break;
-                                }
-                            }
-                        });
-                    }
-                    if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.SEND_SMS)) {
-                        showDialogOK(getString(R.string.dialogCheckPermissionSMS), new DialogInterface.OnClickListener()
-                        {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which)
-                            {
-                                switch (which)
-                                {
-                                    case DialogInterface.BUTTON_POSITIVE:
-                                        checkPermissions();
-                                        break;
-                                    case DialogInterface.BUTTON_NEGATIVE:
-                                        // proceed with logic by disabling the related features or quit the app.
-                                        break;
-                                }
-                            }
-                        });
-                    }
+                    checkPermissionSendSMS();
                 }
                 return;
             }
         }
-    }
-
-    private void showDialogOK(String message, DialogInterface.OnClickListener okListener)
-    {
-        new AlertDialog.Builder(this)
-                .setMessage(message)
-                .setPositiveButton(getString(R.string.btnOK), okListener)
-                .setNegativeButton(getString(R.string.btnCancel), okListener)
-                .create()
-                .show();
     }
 }
