@@ -120,8 +120,8 @@ public class AlarmAlertActivity extends Activity {
         // Toast.makeText(this, answerString, Toast.LENGTH_LONG).show();
 
         startAlarm();
-//        10000 1 min 10000
-        countDownTimer = new CountDownTimer(300000, 1000) {
+//        10000 1 min 10000   60000 = 1 min   300000 = 5 min
+        countDownTimer = new CountDownTimer(10000, 1000) {
 
             //Здесь обновляем текст счетчика обратного отсчета с каждой секундой
             public void onTick(long millisUntilFinished) {

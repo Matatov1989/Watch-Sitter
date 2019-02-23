@@ -11,18 +11,37 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.util.ArrayList;
+import com.sergeant_matatov.watchsitter.adapter.ContactRecyclerAdapter;
 
+import java.util.ArrayList;
+import android.app.Activity;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 /**
  * Created by Yurka on 29.08.2016.
  */
 public class Book extends Activity {
+
+    ContactRecyclerAdapter contactRecyclerAdapter;
+    RecyclerView recyclerContact;
 
     final String LOG_TAG = "myLogs";
 
@@ -43,13 +62,20 @@ public class Book extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_book);
 
+        recyclerContact = (RecyclerView) findViewById(R.id.recyclerContact);
+        recyclerContact.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        recyclerContact.setLayoutManager(new LinearLayoutManager(this));
+        recyclerContact.setClickable(true);
+
+
+        /*
         Intent intent = getIntent();
         if (intent.hasExtra("flagTab"))
             flagTab = intent.getStringExtra("flagTab");
 
         listView = (ListView) findViewById(R.id.listView);
         listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);       // устанавливаем режим выбора пунктов списка
-
+*/
         checkPermissionReadBook();
     }
 
@@ -153,6 +179,63 @@ public class Book extends Activity {
 
         }
     }
+/*
+    //check permission on read a phone book
+    private void checkPermissionReadBook() {
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, android.Manifest.permission.READ_CONTACTS)) {
+                dialogPermissionReadBook();
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_CONTACTS}, CODE_READ_BOOK);
+            }
+        } else {
+            setListBook();
+        }
+    }*/
+/*
+    //dialog if user do not set permission on read a phone book
+    private void dialogPermissionReadBook() {
+        android.app.AlertDialog.Builder adb = new android.app.AlertDialog.Builder(this);
+        adb.setCancelable(false);
+        adb.setMessage(R.string.dialogCheckPermissionContact);
+        adb.setPositiveButton(R.string.btnOK, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                ActivityCompat.requestPermissions(Book.this, new String[]{android.Manifest.permission.READ_CONTACTS}, CODE_READ_BOOK);
+                dialog.dismiss();
+            }
+        });
+        adb.show();
+    }*/
+/*
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case CODE_READ_BOOK: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    setListBook();
+                } else {
+                    checkPermissionReadBook();
+                }
+                return;
+            }
+        }
+    }
+*/
+  /*  //set list contacts from a phone book
+    private void setListBook() {
+        getContacts();      //функция загружающая контакты с телефоной книги
+
+        myArrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_multiple_choice, android.R.id.text1, personList);
+
+        listView.setAdapter(myArrayAdapter);
+    }*/
+
+
+    //set list contacts from a phone book
+    private void setListBook() {
+        contactRecyclerAdapter = new ContactRecyclerAdapter(this);
+        recyclerContact.setAdapter(contactRecyclerAdapter);
+    }
 
     //check permission on read a phone book
     private void checkPermissionReadBook() {
@@ -193,15 +276,6 @@ public class Book extends Activity {
                 return;
             }
         }
-    }
-
-    //set list contacts from a phone book
-    private void setListBook() {
-        getContacts();      //функция загружающая контакты с телефоной книги
-
-        myArrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_multiple_choice, android.R.id.text1, personList);
-
-        listView.setAdapter(myArrayAdapter);
     }
 
 }

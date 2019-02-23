@@ -78,7 +78,7 @@ public class PersonSQL extends SQLiteOpenHelper {
     public void delPerson(String pers)
     {
         SQLiteDatabase db = getWritableDatabase();
-        String query = "delete from Person where namePers = '"+pers+"'";
+        String query = "delete from Person where phonePers = '"+pers+"'";
         db.execSQL(query);
     }
 

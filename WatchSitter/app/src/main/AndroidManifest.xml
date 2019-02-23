@@ -5,15 +5,9 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
- <!--   <uses-permission android:name="android.permission.READ_PHONE_STATE" /> -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <!-- разрешение для телефонной книги -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-
-    <!-- отправка сообщения -->
-    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
         android:allowBackup="true"
@@ -79,6 +73,23 @@
         <activity
             android:name=".PrivacyPolicy"
             android:theme="@style/AppTheme.NoActionBar"/>
+
+
+
+
+        <activity android:name=".ui.AddEditAlarmActivity" />
+
+        <activity
+            android:name=".ui.AlarmLandingPageActivity"
+            android:theme="@style/AlertLandingPageTheme" />
+
+        <service android:name=".service.LoadAlarmsService" />
+
+        <receiver android:name=".service.LoadAlarmsReceiver" />
+
+        <receiver android:name=".service.AlarmReceiver" />
+
+
     </application>
 
 </manifest>

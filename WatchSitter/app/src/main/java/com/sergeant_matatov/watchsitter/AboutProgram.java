@@ -5,15 +5,19 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
 
 /**
  * Created by Yurka on 18.10.2016.
  */
 
 public class AboutProgram extends AppCompatActivity {
-
+    final String LOG_TAG = "myLogs";
     TextView textPolicy;
 
     @Override
@@ -30,6 +34,7 @@ public class AboutProgram extends AppCompatActivity {
                 startActivity(new Intent(AboutProgram.this, PrivacyPolicy.class));
             }
         });
+
     }
 
     //написать мне
@@ -37,7 +42,7 @@ public class AboutProgram extends AppCompatActivity {
         final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
         emailIntent.setType("plain/text");
         // Кому
-        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[] { "Matatov1989@gmail.com" });
+        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"Matatov1989@gmail.com"});
         // тема
         emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Calendar Clients");
         // текст
@@ -51,7 +56,7 @@ public class AboutProgram extends AppCompatActivity {
         final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
         emailIntent.setType("plain/text");
         // Кому
-        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[] { "Docmat63@gmail.com" });
+        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"Docmat63@gmail.com"});
         // тема
         emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Calendar Clients");
         // текст

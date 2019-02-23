@@ -14,5 +14,4 @@ public class AlarmServiceBroadcastReciever extends BroadcastReceiver {
         Intent serviceIntent = new Intent(context, AlarmService.class);
         context.startService(serviceIntent);
     }
-
 }

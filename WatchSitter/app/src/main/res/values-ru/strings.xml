@@ -21,12 +21,13 @@
     <string name="daySaturday">Суббота</string>
 
 
-    <!-- pref alarm list-->
     <string name="setTimeAlarm">Установить время</string>
     <string name="setRepeat">Повторение</string>
     <string name="setDifficulty">трудность</string>
     <string name="setRingtone">Мелодия</string>
     <string name="strEveryDay">Каждый день</string>
+    <string name="strErrorName">введите своё имя</string>
+    <string name="strErrorPhone">введите свой телефон</string>
     <string name="strVersion">Версия 2.3</string>
 
 
@@ -36,9 +37,8 @@
     <string name="dialogMsgDelPers">Вы точно хотите удалить контакт из списка получателей?</string>
     <string name="dialogMsgStartInstructions">Для начало работы программы необходимо установить будильник (будильники) и выбрать контакт (контакты) для получения сообщения.</string>
     <string name="dialogMsgInstructions">После того как Вы выбрали контакты и установили будильники программа начнет свою работу, при условии что телефон включен. Будильники срабатывают вовремя. Отлючить будильник необходимо в течении 5 минут. Если будильник не отключить, то по истечении 5 минут программа разошлет сообщения выбранным контактам. Приятного использования!</string>
-    <string name="dialogCheckPermissionSMS">Программа использует функцию отправки sms-сообщений. Это нужно на случай, когда сработает будильник, и Вы по каким-либо причинам в течении 5 минут не отключите будильник, то программа автоматически разошлёт тревожный сигнал в виде sms-сообщения контактам, которые Вы выбрали. За отправления sms-сообщений может взиматься плата. Подробности Вы можете узнать у Вашего сотового оператора. Без Вашего разрешения нет смысла дальше пользоваться программой.</string>
     <string name="dialogCheckPermissionContact">Программа использует данные телефонной книги, для того что бы Вы выбрали нужные контакты в качестве получателя, которые будут получать тревожный сигнал в виде sms-сообщения. Данные телефонной книги доступны только Вам и никуда не передаются. Без Вашего разрешения нет смысла дальше пользоваться программой.</string>
-
+    <string name="dialogMsgAuth">В связи с изменением условий содержания программы в маркете, для дальнейшего  ипользования программы, Вам необходимо вписать Ваше имя и действующий номер телефона. Тем самым Вы подтверждаете нашу <a href="https://sites.google.com/view/watch-sitter/">Политику Конфидециальности</a>.\nНе переживайте, Ваши данные недоступны никому!</string>
 
     <!-- Buttons -->
     <string name="btnOK">OK</string>
@@ -54,15 +54,52 @@
     <string name="textAlarms">Будильники:</string>
     <string name="textPersons">Контакты которые получат сообщения:</string>
     <string name="textTimer">Будильник выключится через:</string>
-    <string name="textSendSMS">Тревожный сигнал на программе watch sitter не был отключен. Срочно перезвоните!</string>
-<!--
-    <string name="textTitlePrivacyPolicy">Политика конфиденциальности\nЧасы Сиделка</string>
-    <string name="textPrivacyPolicy"><b><u>Цель программы</u></b> – обеспечить контроль и быструю помощь для тех, кто одинок или болен, или нуждается в поддержке.\n\n\n<b><u>Использование программы.</u></b>\nВ программе нужно настроить будильник или будильники так как это нужно и удобно пользователю. После установки будильника или будильников обязательно нужно выбрать телефонный номер или несколько телефонных номеров, которые будут получать тревожный сигнал в виде sms сообщения. Во время, когда срабатывает будильник, пользователь в течении 5 минут должен его отключить. Если же по каким-либо причинам пользователь не смог отключить будильник, программа автоматически оповестит выбранные пользователем контакты о том, что будильник не был отключен.\n\n\n<b><u>Использование данных телефонной книги и отправка sms-сообщений</u></b>\n1.	Программа использует данные телефонной книги, для того что бы пользователь программы выбрал нужные ему контакты в качестве получателя, которые будут получать тревожный сигнал в виде sms-сообщения (п.2). Данные телефонной книги доступны только пользователю программы и никуда не передаются;\n\n2.	Программа использует функцию отправки sms-сообщений. Это нужно на случай, когда сработает будильник, и пользователь по каким-либо причинам в течении 5 минут не отключит будильник, то программа автоматически разошлёт тревожный сигнал в виде sms-сообщения контактам, которые выберет пользователь (п.1). За отправления sms-сообщений может взиматься плата. Подробности Вы можете узнать у Вашего сотового оператора.</string>
--->
+    <string name="textSendSMS">Часы Сиделка. %1$s не отключил будильник. Срочно перезвоните на его номер %2$s!</string>
+    <string name="textTitleImportant">Важно</string>
+
+
     <string name="nameDeveloper">Мататов Юрий\nMatatov1989@gmail.com</string>
     <string name="nameDesigner">Мататов Никита\nDocmat63@gmail.com</string>
 
+    <string name="hintTypeName">Введите свое имя...</string>
+    <string name="hintTypePhone">Введите свой номер телефона...</string>
 
+    <string name="toastLimitSelected">только три контакта</string>
 
+    <!-- Main Activity/Fragment -->
+    <string name="empty_view_text">Press the Floating Action Button to add an alarm!</string>
+
+    <!-- Edit Alarm Activity/Fragment -->
+    <string name="time">Time</string>
+    <string name="label">Label</string>
+    <string name="days">Days</string>
+    <string name="edit_alarm">Edit Alarm</string>
+    <string name="add_alarm">Add Alarm</string>
+    <string name="add_label_hint">Add a label!</string>
+    <string name="update_complete">Changes Saved</string>
+    <string name="update_failed">Update Failed</string>
+    <string name="delete_complete">Alarm Deleted</string>
+    <string name="delete_failed">Delete Failed</string>
+    <string name="delete_dialog_title">Confirm Delete Alarm</string>
+    <string name="delete_dialog_content">Are you sure you would like to delete this alarm?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!-- Edit Alarm Menu -->
+    <string name="action_save">Save</string>
+    <string name="action_delete">Delete</string>
+
+    <!-- Alarm Landing Page Activity/Fragment -->
+    <string name="launch_main_activity">Launch Main Activity</string>
+    <string name="dismiss">Dismiss</string>
+
+    <!-- Days -->
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
 
 </resources>
