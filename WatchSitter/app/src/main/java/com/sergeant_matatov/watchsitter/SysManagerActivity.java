@@ -12,8 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputLayout;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+
 import android.support.v7.widget.Toolbar;
 import android.text.method.LinkMovementMethod;
 import android.util.Base64;
@@ -35,17 +34,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Retrofit;
-import retrofit2.http.FieldMap;
-import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.Header;
-import retrofit2.http.POST;
-import retrofit2.http.Path;
 
 import static com.sergeant_matatov.watchsitter.Constants.NAME_PREF_FILE;
 import static com.sergeant_matatov.watchsitter.Constants.USER_NAME;
@@ -168,7 +156,6 @@ public class SysManagerActivity extends BaseActivity {
 
         listPersonView.setAdapter(arrayAdapterPerson);
 
-
         //слушатель для листа с контактами
         listPersonView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -178,64 +165,6 @@ public class SysManagerActivity extends BaseActivity {
                 dialogDellPerson(pers);
             }
         });
-    }
-
-
-    private static final String ACCOUNT_SID = "AC27b47ac07c55093e9a763eebb61106f2";
-    private static final String AUTH_TOKEN = "2404272220431950d85a6ff2cf33eb25";
-    private static final String PHONE_NUMBER_SENDER = "+14253812308";
-
-
-    //    private static final String ACCOUNT_SID = "ACb7a775cff360238a63b8cdeacc0faeb9";
-//    private static final String AUTH_TOKEN = "4c118e5634ea1efbb86b098123f7b8e3";
-    //отправляем SMS
-    private void sendMessage(String receiverNumber) {
-        String body = getString(R.string.textSendSMS, getUserName(), getUserPhone());
-
-        String base64EncodedCredentials = "Basic " + Base64.encodeToString(
-                (ACCOUNT_SID + ":" + AUTH_TOKEN).getBytes(), Base64.NO_WRAP
-        );
-
-        Map<String, String> data = new HashMap<>();
-        data.put("From", PHONE_NUMBER_SENDER);
-        data.put("To", "+972526461150");
-        data.put("Body", "Hello");
-
-        Log.d(LOG_TAG, "osms " + PHONE_NUMBER_SENDER);
-        Log.d(LOG_TAG, "osms " + receiverNumber);
-        Log.d(LOG_TAG, "osms " + body);
-
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.twilio.com/2010-04-01/")
-                .build();
-        TwilioApi api = retrofit.create(TwilioApi.class);
-
-        api.sendMessage(ACCOUNT_SID, base64EncodedCredentials, data).enqueue(new Callback<ResponseBody>() {
-
-            @Override
-            public void onResponse(Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
-                if (response.isSuccessful())
-                    Log.d(LOG_TAG, "onResponse->success ");
-                else
-                    Log.d(LOG_TAG, "onResponse->failure " + response.toString());
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Log.d(LOG_TAG, "onFailure");
-            }
-        });
-    }
-
-    interface TwilioApi {
-        @FormUrlEncoded
-        @POST("Accounts/{ACCOUNT_SID}/SMS/Messages")
-        Call<ResponseBody> sendMessage(
-                @Path("ACCOUNT_SID") String accountSId,
-                @Header("Authorization") String signature,
-                @FieldMap Map<String, String> metadata
-        );
     }
 
     //save user name and phone number

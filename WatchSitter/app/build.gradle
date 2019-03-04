@@ -11,14 +11,21 @@ android {
         applicationId "com.sergeant_matatov.watchsitter"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 11
-        versionName "2.3"
+        versionCode 13
+        versionName "2.3 final"
 
 
         javaCompileOptions {
             annotationProcessorOptions {
                 includeCompileClasspath false
             }
+        }
+
+        lintOptions {
+            checkReleaseBuilds false
+            // Or, if you prefer, you can continue to check for errors in release builds,
+            // but continue the build even when errors are found:
+            abortOnError false
         }
     }
     buildTypes {

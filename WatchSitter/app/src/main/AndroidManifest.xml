@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SysManagerActivity"
+            android:name=".PrivacyPolicy"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
@@ -71,11 +71,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".PrivacyPolicy"
+            android:name=".SysManagerActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-
-
-
 
         <activity android:name=".ui.AddEditAlarmActivity" />
 

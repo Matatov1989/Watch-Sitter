@@ -28,12 +28,10 @@ import static com.sergeant_matatov.watchsitter.Constants.USER_NUMBER;
 public class ServiceSendSMS extends Service {
     final String LOG_TAG = "myLogs";
 
-    private static final String ACCOUNT_SID = "AC27b47ac07c55093e9a763eebb61106f2";
-    private static final String AUTH_TOKEN = "2404272220431950d85a6ff2cf33eb25";
-    private static final String PHONE_NUMBER_SENDER = "+14253812308";
-
-//    private static final String ACCOUNT_SID = "ACb7a775cff360238a63b8cdeacc0faeb9";
-//    private static final String AUTH_TOKEN = "4c118e5634ea1efbb86b098123f7b8e3";
+    /*TWILIO*/
+    private static final String ACCOUNT_SID = "your sid from twilio";
+    private static final String AUTH_TOKEN = "your token from twilio";
+    private static final String PHONE_NUMBER_SENDER = "twilio phone number";
 
     public ServiceSendSMS() {
     }
@@ -78,13 +76,12 @@ public class ServiceSendSMS extends Service {
 
         Map<String, String> data = new HashMap<>();
         data.put("From", PHONE_NUMBER_SENDER);
-        data.put("To", "+972549759346");
+        data.put("To", receiverNumber);
         data.put("Body", "Hello");
 
         Log.d(LOG_TAG, "osms " + PHONE_NUMBER_SENDER);
         Log.d(LOG_TAG, "osms " + receiverNumber);
         Log.d(LOG_TAG, "osms " + body);
-
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.twilio.com/2010-04-01/")

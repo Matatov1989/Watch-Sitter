@@ -34,7 +34,6 @@ public class AboutProgram extends AppCompatActivity {
                 startActivity(new Intent(AboutProgram.this, PrivacyPolicy.class));
             }
         });
-
     }
 
     //написать мне
@@ -44,7 +43,7 @@ public class AboutProgram extends AppCompatActivity {
         // Кому
         emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"Matatov1989@gmail.com"});
         // тема
-        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Calendar Clients");
+        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.app_name));
         // текст
         emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "");
         // отправка!
@@ -58,7 +57,7 @@ public class AboutProgram extends AppCompatActivity {
         // Кому
         emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"Docmat63@gmail.com"});
         // тема
-        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Calendar Clients");
+        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.app_name));
         // текст
         emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "");
         // отправка!
